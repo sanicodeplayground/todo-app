@@ -1,0 +1,33 @@
+<%- include("partials/header.ejs") %>
+
+  
+
+    <h1><%= date %></h1>
+
+    <div class="todo-container">
+      <div class="item">
+      <ul id="todo-list">
+        <% tasks.forEach(function(task, index) { %>
+        <li>
+          <input type="checkbox" data-index="<%= index %>" onchange="handleTaskCompletion(this)"
+          <%= task.checked ? "checked" : "" %> 
+          />
+          <span> <%= task.description %></li> </span>
+        <% }); %>
+      </ul>
+    </div>
+      <form action="/add-task" method="POST">
+        <input type="text" name="task" placeholder="New Item" autocomplete="off" />
+        <button type="submit" name="list" value="+">+</button>
+      </form>
+    </div>
+
+    <%- include ("partials/footer.ejs") %>
+  
+    <script src="/scripts.js"></script>
+  
+  
+  
+
+
+
