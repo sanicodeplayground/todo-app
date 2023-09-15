@@ -15,14 +15,20 @@ A simple Todo List application using Express.js and EJS templates.
   - git clone https://github.com/sanicodeplayground/todo-list.git
   - cd [your-repository-folder]
 
+2. Initialise NPM
+   run command npm init -y 
+
 2. Install Dependencies:
 Make sure you have Node.js and npm installed. Then, install the required packages:
+   npm install
 
-  npm install
+3. Install Express.js and EJS:
+    npm install express ejs
+
   
-3. Start the Application:
+4. Start the Application:
 
-  npm start
+     node index.js
   
 The application will start, and you can access it at **http://localhost:3000.**
 
