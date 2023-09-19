@@ -1,43 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Todo List</title>
-  </head>
-  <body>
-    <!-- Include the header -->
-    <%- include("partials/header.ejs") %>
+<!-- Include the header -->
+<%- include("partials/header.ejs") %>
 
-    <!-- Display the current date -->
-    <h1><%= date %></h1>
+<!-- Display the current date -->
+<div id="heading" class="box">
+  <h1><%= date %></h1>
+</div>
 
-    <!-- Container for the todo list items and form to add new tasks -->
-    <div class="todo-container">
-      <div class="item"></div>
-      <ul id="todo-list">
-        <!-- Iterate over tasks and display them -->
-        <% tasks.forEach(function(task) { %>
-        <li>
-          <!-- Checkbox to mark task as complete/incomplete -->
-          <input type="checkbox" onchange="handleTaskCompletion(this)" <%= task.checked ? "checked"
-          : "" %> />
-          <!-- Display task description -->
-          <span> <%= task.description %> </span>
-        </li>
-        <% }); %>
-      </ul>
-      <!-- Form to add new task -->
-      <form action="/add-task" method="POST">
-        <input type="text" name="task" placeholder="New Item" autocomplete="off" />
-        <button type="submit" name="list" value="+">+</button>
-      </form>
-    </div>
+<!-- Container for the todo list items and form to add new tasks -->
+<div class="todo-container">
+  <div class="item">
+    <ul id="todo-list">
+      <!-- Iterate over tasks and display them -->
+      <% tasks.forEach(function(task) { %>
+      <li>
+        <!-- Checkbox to mark task as complete/incomplete -->
+        <input type="checkbox" onchange="handleTaskCompletion(this)" <%= task.checked ? "checked" :
+        "" %> />
+        <!-- Display task description -->
+        <span> <%= task.description %> </span>
+      </li>
+      <% }); %>
+    </ul>
+  </div>
+  <!-- Form to add new task -->
+  <form action="/add-task" method="POST">
+    <input type="text" name="task" placeholder="New Item" autocomplete="off" />
+    <button type="submit" name="list" value="+">+</button>
+  </form>
+</div>
 
-    <!-- Include the footer -->
-    <%- include ("partials/footer.ejs") %>
+<!-- Include the footer -->
+<%- include ("partials/footer.ejs") %>
 
-    <!-- Link the scripts.js file -->
-    <script src="/scripts.js"></script>
-  </body>
-</html>
+<!-- Link the scripts.js file -->
+<script src="/scripts.js"></script>
