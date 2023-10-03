@@ -2,22 +2,27 @@
 <%- include("partials/header.ejs") %>
 
 <!-- Display the title for the work todo list -->
-<h1>Work List</h1>
+<div id="heading" class="box">
+  <h1>Work List</h1>
+</div>
 
 <!-- Container for the work todo list items and form to add new tasks -->
 <div class="todo-container">
-  <ul id="work-todo-list">
-    <!-- Iterate over workTasks and display them -->
-    <% workTasks.forEach(function(task) { %>
-    <li>
-      <!-- Checkbox to mark task as complete/incomplete -->
-      <input type="checkbox" onchange="handleTaskCompletion(this)" <%= task.checked ? "checked" : ""
-      %> />
-      <!-- Display task  description-->
-      <span> <%= task.description %></span>
-    </li>
-    <% }); %>
-  </ul>
+  <div class="item">
+    <ul id="work-todo-list">
+      <!-- Iterate over workTasks and display them -->
+      <% workTasks.forEach(function(task) { %>
+      <li>
+        <!-- Checkbox to mark task as complete/incomplete -->
+        <input type="checkbox" onchange="handleTaskCompletion(this)" <%= task.checked ? "checked" :
+        "" %> />
+        <!-- Display task  description-->
+        <span> <%= task.description %></span>
+      </li>
+      <% }); %>
+    </ul>
+  </div>
+
   <!-- Form to add a new task to the work list -->
   <form action="/work/add-task" method="POST">
     <input type="text" name="task" placeholder="New Item" autocomplete="off" />
