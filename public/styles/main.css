@@ -4,20 +4,17 @@
   padding: 0;
 }
 body {
-  /* background: linear-gradient(rgb(136, 5, 136) 50%, rgb(226, 158, 232)); */
-  background-color: #e4e9fd;
+  background: linear-gradient(25deg, rgb(184, 112, 184) 50%, rgb(232, 208, 237));
   font-family: "Roboto", sans-serif;
-  font-size: 16px;
-  /* height: 100vh; */
   display: flex;
   flex-direction: column;
   text-align: center;
-  /* align-items: center; */
+  justify-content: stretch;
   min-height: 95vh;
 }
-/* main {
-  display: flex;
-} */
+main {
+  flex: 1 0 auto;
+}
 h1 {
   font-size: 1.9rem;
   color: white;
@@ -32,18 +29,20 @@ nav {
 }
 nav ul {
   list-style: none;
-  /* text-align: left; */
   padding: 2rem;
 }
 nav li {
   display: inline;
-  margin-right: 10px;
+  margin-right: 0.6rem;
 }
 nav ul li a {
   text-decoration: none;
   font-size: 1.5rem;
   color: rgb(85, 26, 139);
   padding: 2rem;
+}
+nav ul li a:hover {
+  text-decoration: underline;
 }
 
 #heading {
@@ -53,8 +52,7 @@ nav ul li a {
   margin-right: auto;
 }
 .box {
-  max-width: 400px;
-  margin: 50px 0;
+  max-width: 25rem;
   border-radius: 0.5rem;
   box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
   margin-bottom: 3rem;
@@ -63,9 +61,10 @@ nav ul li a {
 .todo-container {
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 3rem;
   background-color: white;
   box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
-  max-width: 400px;
+  max-width: 25rem;
   border-radius: 0.5rem;
   width: 80%;
   padding: 1rem;
@@ -73,7 +72,7 @@ nav ul li a {
   flex-direction: column;
 }
 .item {
-  min-height: 70px;
+  min-height: 4.3rem;
   display: flex;
   text-align: left;
   border-bottom: 1px solid #f1f1f1;
@@ -81,7 +80,7 @@ nav ul li a {
 #todo-list li,
 #work-todo-list li {
   border-bottom: 1px solid #f1f1f1;
-  padding: 20px 10px;
+  padding: 1.25rem 0.6rem;
   list-style-type: none;
 }
 #todo-list li:last:child,
@@ -90,55 +89,69 @@ nav ul li a {
 }
 #todo-list input[type="checkbox"],
 #work-todo-list input[type="checkbox"] {
-  margin-right: 20px;
+  margin-right: 1.25rem;
 }
 form {
-  margin-top: 20px;
+  margin-top: 1.25rem;
 }
-/* input {
-  appearance: none;
-  -webkit-appearance: none;
-  border: 0;
-  font-size: 0.9rem;
-  padding: 1rem;
-  color: white;
-  cursor: pointer;
-} */
-
 input[type="text"] {
   text-align: center;
-  height: 60px;
+  height: 3.75rem;
   border: none;
   outline: none;
   font-size: 2rem;
   font-weight: 200;
-  width: 313px;
+  width: 19.5rem;
   border-bottom: 1px solid #a683e3;
   background: transparent;
 }
 button {
-  min-height: 50px;
-  width: 50px;
+  min-height: 3.125rem;
+  width: 3.125rem;
   border: none;
   border-radius: 50%;
   background-color: #a683e3;
-  font-size: 30px;
+  font-size: 1.8rem;
   border-color: transparent;
   color: white;
   border-width: 0;
 }
 #todo-list span,
 #work-todo-list span {
-  font-size: 20px;
-  height: 60px;
+  font-size: 1.25rem;
+  height: 3.75rem;
 }
 footer {
-  position: absolute;
   bottom: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   color: rgba(0, 0, 0, 0.8);
+}
+
+@media only screen and (max-width: 500px) {
+  h1 {
+    font-size: 1.4rem;
+  }
+  input[type="text"] {
+    width: 13rem;
+    font-size: 1.5rem;
+  }
+  form {
+    display: flex;
+    justify-content: space-between;
+  }
+  button {
+    height: 3.125rem;
+  }
+}
+
+/* For very large screens */
+@media only screen and (max-width: 1200px) {
+  body {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
 }
