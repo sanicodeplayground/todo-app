@@ -78,15 +78,18 @@ nav ul li a {
   text-align: left;
   border-bottom: 1px solid #f1f1f1;
 }
-#todo-list li {
+#todo-list li,
+#work-todo-list li {
   border-bottom: 1px solid #f1f1f1;
   padding: 20px 10px;
   list-style-type: none;
 }
-#todo-list li:last:child {
+#todo-list li:last:child,
+#work-todo-list li:last-child {
   border-bottom: none;
 }
-#todo-list input[type="checkbox"] {
+#todo-list input[type="checkbox"],
+#work-todo-list input[type="checkbox"] {
   margin-right: 20px;
 }
 form {
@@ -124,7 +127,8 @@ button {
   color: white;
   border-width: 0;
 }
-#todo-list span {
+#todo-list span,
+#work-todo-list span {
   font-size: 20px;
   height: 60px;
 }
